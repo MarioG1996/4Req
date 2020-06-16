@@ -1,0 +1,77 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="NavBar.Master.cs" Inherits="LProsud.Vista.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html;" />
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="../Styles/Boostrap.css" rel="stylesheet" />
+
+    <link href="../Styles/StyleSheet1.css" rel="stylesheet" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <title></title>
+
+    <nav class="navbar navbar-default ">
+        <div class="container-fluid">
+
+            <ul class="nav navbar-nav">
+
+                <li><a href="Home.aspx">Home</a></li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Comerciales<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="CierreMetas.aspx">Cierre de Metas</a></li>
+                        <li><a href="CargaMetas.aspx">Carga de Metas</a></li>
+                        <li><a href="AsignacionMetas.aspx">Asignacion de Metas</a></li>
+                        <li><a href="ComparativoCierre.aspx">Comparativo cierre</a></li>
+                        <li><a href="ProductosNE.aspx">Productos no especificados</a></li>
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Supply and Chain<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Cierre de Metas</a></li>
+
+                    </ul>
+                </li>
+
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Administracion y Finanzas<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="FacturacionMasiva.aspx">Facturación Masiva</a></li>
+
+                    </ul>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+</head>
+
+<script>
+    $(document).ready(function () {
+        var url = window.location;
+        $('.navbar .nav').find('.active').removeClass('active');
+        $('.navbar .nav li a').each(function () {
+            if (this.href == url) {
+                $(this).parent().addClass('active');
+            }
+        });
+    });
+</script>
+
+<body>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+</body>
+</html>
